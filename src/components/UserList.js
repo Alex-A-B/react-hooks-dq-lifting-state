@@ -1,13 +1,13 @@
 import React from "react";
 import UserCard from "./UserCard";
 
-function UserList(props) {
+function UserList({ users, onChangeUser }) {
   return (
     <div className="ui cards">
-      {props.users.map((user) => (
+      {users.map((user) => (
         <UserCard
           key={user.id}
-          handleUserClick={() => console.log("u clicked the user")}
+          handleUserClick={() => onChangeUser(user)}
           {...user}
         />
       ))}
